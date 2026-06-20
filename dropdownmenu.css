@@ -1,0 +1,106 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1.2rem;
+}
+header{
+    background-color: black;
+    color: aliceblue;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.btn-container{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-icon, .btn-icon::before, .btn-icon::after{
+    transition-duration: 0.2s;
+    width: 35px;
+    height: 5px;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+.btn-icon{
+    position: relative;
+}
+.btn-icon::before, .btn-icon::after{
+    content: "";
+    position: absolute;
+}
+.btn-icon::before{
+    top: -14px;
+    left: 0;
+}
+.btn-icon::after {
+    top: 14px;
+    left: 0;
+}
+@keyframes dropdown{
+    0%{
+        transform: scale(0);
+    }
+    85%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+nav{
+    background-color: black;
+    transform-origin: top center;
+    display: none;
+    animation-name: dropdown;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+nav li{
+    list-style-type: none;
+    padding: 0.8rem;
+    border-top: 1px solid aliceblue;
+}
+nav a{
+    display: block;
+    text-align: center;
+    width: 60%;
+    margin: auto;    
+}
+nav a:any-link{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+}
+nav a:hover, nav a:focus{
+    scale: 1.2;
+    transition-duration: 0.2s;
+}
+:is(header:hover, header:focus-within) .btn-icon{
+    background-color: transparent;
+    transform: rotate(180deg);
+}
+:is(header:hover, header:focus-within) .btn-icon::before{
+   top: 0;
+   transform: rotate(45deg);
+}
+:is(header:hover, header:focus-within) .btn-icon::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+:is(header:hover, header:focus-within) nav{
+    display: block;
+}
