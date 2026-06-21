@@ -71,13 +71,14 @@ nav{
 }
 nav li{
     list-style-type: none;
-    padding: 0.8rem;
     border-top: 1px solid aliceblue;
 }
 nav a{
     display: block;
     text-align: center;
     width: 60%;
+    padding: 2rem;
+    font-size: 1.5rem;
     margin: auto;    
 }
 nav a:any-link{
@@ -86,7 +87,7 @@ nav a:any-link{
     font-weight: bold;
 }
 nav a:hover, nav a:focus{
-    scale: 1.2;
+    scale: 1.1;
     transition-duration: 0.2s;
 }
 :is(header:hover, header:focus-within) .btn-icon{
